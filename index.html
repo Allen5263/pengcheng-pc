@@ -3,18 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="description" content="鹏成电脑 - 专业的电脑销售与维修服务">
     <meta name="keywords" content="鹏成电脑,电脑维修,电脑销售,电脑配件,电脑升级">
     <title>鹏成电脑 - 专业电脑销售与维修服务</title>
     <style>
-        body {
-            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
             line-height: 1.8;
             background-color: #ffffff;
-            padding-bottom: 60px; /* 为固定底部留出空间 */
+            padding-bottom: 60px;
             color: #333333;
+            min-width: 320px;
+            max-width: 100%;
+            overflow-x: hidden;
         }
         header {
             background-color: #4a90e2;
@@ -22,6 +29,7 @@
             text-align: center;
             padding: 1.5rem;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 100%;
         }
         header h1 {
             margin: 0;
@@ -35,41 +43,43 @@
             letter-spacing: 1px;
         }
         main {
-            max-width: 100%;
-            margin: 10px auto;
-            padding: 10px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px;
         }
         .services {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-            margin-top: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
         }
         .service-card {
             background: white;
-            border: 1px solid #ddd;
-            padding: 15px;
+            border: 1px solid #eee;
+            padding: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         .service-card h2 {
             color: #4a90e2;
-            margin-top: 0;
             font-size: 1.5em;
             font-weight: 600;
             letter-spacing: 1px;
+            margin-bottom: 15px;
         }
         .service-card p {
             color: #666666;
             font-size: 1.1em;
-            line-height: 1.8;
+            margin-bottom: 10px;
         }
         .contact-info {
-            text-align: center;
-            margin: 20px 0;
-            padding: 20px;
             background: white;
+            border: 1px solid #eee;
             border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         .contact-info h2 {
@@ -83,17 +93,23 @@
             margin: 20px 0;
         }
         .phone-number {
-            display: block;
+            display: inline-block;
             margin: 10px 0;
+            padding: 8px 15px;
             font-size: 1.3em;
             color: #333333;
             text-decoration: none;
             font-weight: 500;
+            background: #f8f9fa;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 300px;
         }
         .contact-info p {
             font-size: 1.1em;
             color: #666666;
             margin: 10px 0;
+            line-height: 1.6;
         }
         .contact-button {
             display: inline-block;
@@ -110,9 +126,8 @@
             letter-spacing: 1px;
             transition: all 0.3s ease;
         }
-        .contact-button:active {
+        .contact-button:hover {
             background-color: #4cae4c;
-            transform: scale(0.98);
         }
         footer {
             background-color: #4a90e2;
@@ -121,17 +136,32 @@
             padding: 1rem;
             position: fixed;
             bottom: 0;
+            left: 0;
             width: 100%;
             font-size: 1em;
             letter-spacing: 1px;
+            z-index: 100;
         }
-        @media (min-width: 768px) {
-            .services {
-                grid-template-columns: repeat(3, 1fr);
+        @media screen and (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
             }
+            header p {
+                font-size: 1.1em;
+            }
+            .service-card h2 {
+                font-size: 1.3em;
+            }
+            .contact-info h2 {
+                font-size: 1.5em;
+            }
+            .phone-number {
+                font-size: 1.1em;
+            }
+        }
+        @media screen and (min-width: 1200px) {
             main {
-                max-width: 1200px;
-                padding: 20px;
+                padding: 30px;
             }
         }
     </style>
